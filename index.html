@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aureon — Done-For-You Websites for Local Service Businesses</title>
+  <meta name="description" content="Aureon builds, manages, and grows websites for local service businesses. One monthly plan: updates, lead capture, local SEO, and real support. Book a free fit call." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement" aria-label="Announcement">
+    <div class="container announcement-inner">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span>🔥 Booking <strong>3 new service businesses</strong> this month · First-month guarantee included</span>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header id="site-header">
+    <div class="container nav">
+      <a class="brand" href="#" aria-label="Aureon Home">
+        <svg viewBox="0 0 48 48" fill="none" class="brand-logo" aria-hidden="true">
+          <path d="M8 34L24 8l16 26" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 34h16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="24" cy="34" r="3.4" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">Aureon</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#proof">Results</a>
+        <a href="#industries">Industries</a>
+        <a href="#calculator">ROI Calculator</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="#pricing">Pricing</a>
+        <button class="btn btn-primary open-booking-btn" type="button">Book free call &rarr;</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#proof" class="mobile-link">Results</a>
+        <a href="#industries" class="mobile-link">Industries</a>
+        <a href="#calculator" class="mobile-link">ROI Calculator</a>
+        <a href="#process" class="mobile-link">Process</a>
+        <a href="#pricing" class="mobile-link">Pricing</a>
+        <a href="#faq" class="mobile-link">FAQ</a>
+      </nav>
+      <div class="mobile-drawer-cta">
+        <button class="btn btn-primary open-booking-btn w-full" type="button">Book free call &rarr;</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="eyebrow-badge"></span>
+            <span>Websites built for local service businesses</span>
+          </div>
+          <h1>A website that actually <em>books jobs</em>, not one that just sits there.</h1>
+          <p class="hero-lead">
+            Aureon builds, manages, and grows websites for HVAC, plumbing, electrical, roofing, and other local service businesses — with one monthly plan that keeps your site updated, trusted, and converting.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg open-booking-btn" type="button">Book my free fit call &rarr;</button>
+            <a class="btn btn-ghost btn-lg" href="#pricing">See pricing</a>
+          </div>
+          <div class="trust-row">
+            <div class="avatars" aria-hidden="true">
+              <span class="av-1">JC</span>
+              <span class="av-2">MR</span>
+              <span class="av-3">SL</span>
+              <span class="av-4">DK</span>
+            </div>
+            <div class="trust-text">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <small>Rated by service business owners for clarity, speed, and real support.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO INTERACTIVE PREVIEW CARD -->
+        <aside class="hero-card" aria-label="Live interactive website demo preview">
+          <div class="card-glass-header">
+            <div class="browser-bar">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="url-badge" id="preview-url">yourhvacpros.com</span>
+            </div>
+            <div class="preview-tabs" role="tablist" aria-label="Service Previews">
+              <button class="tab-btn active" data-industry="hvac" role="tab" aria-selected="true">HVAC</button>
+              <button class="tab-btn" data-industry="plumbing" role="tab" aria-selected="false">Plumbing</button>
+              <button class="tab-btn" data-industry="roofing" role="tab" aria-selected="false">Roofing</button>
+              <button class="tab-btn" data-industry="electrical" role="tab" aria-selected="false">Electrical</button>
+            </div>
+          </div>
+
+          <div class="mini-hero" id="preview-screen">
+            <div class="mini-meta">
+              <span class="rating-badge">★★★★★ 4.9 · 312 reviews</span>
+              <span class="license-badge">Licensed & Insured</span>
+            </div>
+            <h4 id="preview-headline">Same-Day HVAC Repair in Albuquerque</h4>
+            <p id="preview-desc">Licensed master technicians. Upfront flat-rate pricing. Call before 3pm for guaranteed same-day dispatch.</p>
+            <div class="mini-cta-bar">
+              <a class="minibtn" href="tel:+15055550199" id="preview-cta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call (505) 555-0199
+              </a>
+              <span class="dispatch-tag">⚡ Tech on duty now</span>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <div class="metric">
+              <strong>+47%</strong>
+              <span>call volume</span>
+            </div>
+            <div class="metric">
+              <strong>&lt;24h</strong>
+              <span>edit turnaround</span>
+            </div>
+            <div class="metric">
+              <strong>4.9★</strong>
+              <span>avg rating shown</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- LOGOS / TRUSTED BY TRADES MARQUEE -->
+    <section class="logos" aria-label="Supported service industries">
+      <div class="container logos-inner">
+        <span class="logos-label">Built for</span>
+        <div class="logos-tags">
+          <span class="tag-trade">HVAC</span>
+          <span class="sep">·</span>
+          <span class="tag-trade">Plumbing</span>
+          <span class="sep">·</span>
+          <span class="tag-trade">Electrical</span>
+          <span class="sep">·</span>
+          <span class="tag-trade">Roofing</span>
+          <span class="sep">·</span>
+          <span class="tag-trade">Landscaping</span>
+          <span class="sep">·</span>
+          <span class="tag-trade">Cleaning</span>
+          <span class="sep">·</span>
+          <span class="tag-trade">Garage Doors</span>
+          <span class="sep">·</span>
+          <span class="tag-trade">Pest Control</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-sec">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">What you get</div>
+            <h2>Everything your website needs — <em>handled monthly</em>.</h2>
+          </div>
+          <p>
+            Most service businesses do not need another agency pitch or endless dashboard logins. They need someone to actually keep the website current, trusted, and built around the high-margin jobs they want more of. That is what Aureon does.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <div class="value-left">
+            <div class="vcard">
+              <div class="iconwrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+              </div>
+              <h3>Done-for-you edits</h3>
+              <p>Hours, services, seasonal offers, crew photos, FAQs, new reviews — updated in under 24 hours, every time.</p>
+            </div>
+
+            <div class="vcard">
+              <div class="iconwrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <h3>Conversion tuning</h3>
+              <p>We test click-to-call CTAs, trust blocks, and service-specific landing sections so more visitors actually pick up the phone.</p>
+            </div>
+
+            <div class="vcard">
+              <div class="iconwrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg>
+              </div>
+              <h3>Local SEO support</h3>
+              <p>Targeted service-area pages, Google Business Profile polish, and local schema so your immediate neighbors find you first.</p>
+            </div>
+
+            <div class="vcard">
+              <div class="iconwrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <h3>Hosting + security</h3>
+              <p>Blazing-fast SSD hosting, SSL certificates, daily backups, and 24/7 uptime monitoring quietly handled so nothing breaks on a busy Saturday.</p>
+            </div>
+
+            <div class="vcard vcard-wide">
+              <div class="vcard-wide-content">
+                <div class="iconwrap iconwrap-gold">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+                </div>
+                <h3>AI-powered request intake</h3>
+                <p>
+                  Simply text or email us any change — our system logs it, an experienced editor applies and tests it, and we confirm when it goes live. You never have to log into WordPress, Squarespace, or a confusing portal.
+                </p>
+                <a href="#process" class="gold-link">See how the process works &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="value-right">
+            <div class="iconwrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3>What's included every month</h3>
+            <p class="vr-sub">No nickels, dimes, or unexpected hourly rate cards.</p>
+            <ul class="checklist" role="list">
+              <li><span class="check">✓</span><span>Unlimited small edits (text, photos, services, offers)</span></li>
+              <li><span class="check">✓</span><span>Quarterly conversion review of your top service pages</span></li>
+              <li><span class="check">✓</span><span>Fresh seasonal banners and holiday promotional blocks</span></li>
+              <li><span class="check">✓</span><span>Review capture workflow + automated testimonial display</span></li>
+              <li><span class="check">✓</span><span>Google Business Profile sync and monthly update post</span></li>
+              <li><span class="check">✓</span><span>Monthly plain-English report: traffic, phone calls, shipped work</span></li>
+              <li><span class="check">✓</span><span>Fast cloud hosting, SSL, daily backups, DDoS defense</span></li>
+              <li><span class="check">✓</span><span>Direct WhatsApp / phone / email line to a dedicated human</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE ROI CALCULATOR SECTION -->
+    <section id="calculator" class="calc-sec">
+      <div class="container">
+        <div class="section-head text-center-sm">
+          <div>
+            <div class="kicker">Estimate Your Returns</div>
+            <h2>What is <em>just 3-5 more jobs</em> worth to your business?</h2>
+          </div>
+          <p>
+            Service businesses run on ticket size and repeat customers. See how an optimized website that captures even a few extra callers each month pays for itself many times over.
+          </p>
+        </div>
+
+        <div class="calc-card">
+          <div class="calc-controls">
+            <div class="calc-group">
+              <div class="calc-header-row">
+                <label for="ticket-slider">Average Job Ticket Size</label>
+                <span class="calc-value-badge" id="ticket-display">$650</span>
+              </div>
+              <input type="range" id="ticket-slider" min="150" max="8000" step="50" value="650" class="styled-slider" />
+              <div class="slider-labels">
+                <span>$150 (Service Call)</span>
+                <span>$2,500 (Major Repair)</span>
+                <span>$8,000+ (Full Install)</span>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <div class="calc-header-row">
+                <label for="jobs-slider">Estimated Extra Booked Jobs / Month</label>
+                <span class="calc-value-badge" id="jobs-display">4 jobs</span>
+              </div>
+              <input type="range" id="jobs-slider" min="1" max="15" step="1" value="4" class="styled-slider" />
+              <div class="slider-labels">
+                <span>1 extra job</span>
+                <span>7 extra jobs</span>
+                <span>15 extra jobs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-results">
+            <div class="result-tile">
+              <span class="res-title">Estimated Monthly Added Revenue</span>
+              <div class="res-amount" id="res-monthly">$2,600</div>
+              <span class="res-note">Per month from website-sourced jobs</span>
+            </div>
+            <div class="result-tile">
+              <span class="res-title">Estimated Annual Added Revenue</span>
+              <div class="res-amount highlight" id="res-annual">$31,200</div>
+              <span class="res-note">Based on 12 months with steady local conversion</span>
+            </div>
+            <div class="calc-verdict">
+              <div class="verdict-icon">⚡</div>
+              <p>
+                At <strong>$497/mo</strong> for the Aureon Growth plan, you only need <strong>1 job every 5-6 weeks</strong> to break even. Everything else is pure profit for your trucks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="proof" class="testimonials-sec">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">What owners say</div>
+            <h2>Less stress. <em>More calls.</em> Fewer excuses from their old web guy.</h2>
+          </div>
+          <p>
+            Real service businesses don't want a portfolio of flashy conceptual mockups. They want a website that actually earns its keep every month — updated, trusted, and ready when an urgent customer lands on it.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="tcard">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"I used to put off website updates for months because dealing with our previous web agency was a headache. Aureon just handles it. I text them a change, it's live the next day. Call inquiries are consistently up."</p>
+            <footer>
+              <span class="tavatar av-1">JC</span>
+              <div>
+                <strong class="tname">James Cortez</strong>
+                <span class="trole">Cortez Heating &amp; Air · Rio Rancho, NM</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="tcard">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"Finally a website that clearly explains what we actually do, where our service radius is, and how to get an estimate. Our online estimate requests nearly doubled in the very first quarter."</p>
+            <footer>
+              <span class="tavatar av-2">MR</span>
+              <div>
+                <strong class="tname">Maria Ruiz</strong>
+                <span class="trole">Desert Roof Pros · Albuquerque, NM</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="tcard">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"I run a plumbing company, not a website. Aureon is the first team that felt like a real partner invested in our phones ringing instead of sending an unexplained invoice for doing nothing."</p>
+            <footer>
+              <span class="tavatar av-3">SL</span>
+              <div>
+                <strong class="tname">Sam Leyba</strong>
+                <span class="trole">Leyba Plumbing · Santa Fe, NM</span>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES SECTION -->
+    <section id="industries" class="industries-sec">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Industries</div>
+            <h2>Built for the <em>service trades</em>.</h2>
+          </div>
+          <p>
+            The same conversion playbook works across home-service categories because the buyer wants the same core things: local credibility, transparent pricing signs, emergency speed, and a frictionless way to contact you.
+          </p>
+        </div>
+
+        <div class="ind-grid">
+          <div class="ind" data-tooltip="High call volume during extreme weather spikes">
+            <strong>HVAC</strong>
+            <span>Our specialty</span>
+          </div>
+          <div class="ind" data-tooltip="Emergency dispatch-focused layout">
+            <strong>Plumbing</strong>
+            <span>Urgency-led</span>
+          </div>
+          <div class="ind" data-tooltip="Safety credentials, licenses & insurance highlights">
+            <strong>Electrical</strong>
+            <span>Trust-heavy</span>
+          </div>
+          <div class="ind" data-tooltip="Before/after visual galleries & financing calculators">
+            <strong>Roofing</strong>
+            <span>Estimate-led</span>
+          </div>
+          <div class="ind" data-tooltip="Portfolio galleries & recurring maintenance packages">
+            <strong>Landscaping</strong>
+            <span>Visual proof</span>
+          </div>
+          <div class="ind" data-tooltip="Transparent square-foot calculators & recurring plans">
+            <strong>Cleaning</strong>
+            <span>Simple booking</span>
+          </div>
+          <div class="ind" data-tooltip="Same-day inspection booking & clear pest guarantees">
+            <strong>Pest control</strong>
+            <span>Fast contact</span>
+          </div>
+          <div class="ind" data-tooltip="Emergency spring repairs & 24/7 hotline prominence">
+            <strong>Garage doors</strong>
+            <span>Call-focused</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section id="process" class="process-sec">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">The process</div>
+            <h2>Launch in <em>7 days</em>. Managed forever.</h2>
+          </div>
+          <p>
+            We keep onboarding lightweight on purpose. You bring the business details and trade licensing, we bring the structure, the high-converting copy, the modern design, and the ongoing maintenance.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="pstep">
+            <div class="num">1</div>
+            <h3>Fit call</h3>
+            <p>15 minutes to see if Aureon matches your business goals. Zero sales pressure, no boring slide decks.</p>
+          </div>
+          <div class="pstep">
+            <div class="num">2</div>
+            <h3>Simple intake</h3>
+            <p>A quick 10-minute form: your core services, coverage zip codes, team photos, and the jobs you want most.</p>
+          </div>
+          <div class="pstep">
+            <div class="num">3</div>
+            <h3>Launch</h3>
+            <p>Your custom, responsive site goes live within 7 days on your domain with hosting, SSL, and analytics configured.</p>
+          </div>
+          <div class="pstep">
+            <div class="num">4</div>
+            <h3>Manage &amp; grow</h3>
+            <p>Ongoing edits, seasonal specials, Google Profile synchronization, and conversion reviews — every month.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="pricing-sec">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Pricing</div>
+            <h2>One simple plan. <em>No surprise invoices.</em></h2>
+          </div>
+          <p>
+            Every plan includes secure cloud hosting, routine maintenance, monthly performance reporting, and a dedicated team member. Upgrade when your fleet is ready to scale.
+          </p>
+        </div>
+
+        <div class="plans">
+          <!-- Foundation Plan -->
+          <div class="plan">
+            <span class="plan-tag">Essentials</span>
+            <h3>Foundation</h3>
+            <p class="plan-sub">For operators who simply need the website fully handled without headaches.</p>
+            <div class="price">$197<span class="period">/mo</span></div>
+            <div class="price-note">+ one-time $497 setup</div>
+            <ul class="checklist" role="list">
+              <li><span class="check">✓</span><span>Up to 3 small edits per month</span></li>
+              <li><span class="check">✓</span><span>High-speed SSD hosting, SSL, daily backups</span></li>
+              <li><span class="check">✓</span><span>24/7 uptime monitoring + security patches</span></li>
+              <li><span class="check">✓</span><span>Direct email support</span></li>
+              <li><span class="check">✓</span><span>Lead capture forms routed to your inbox</span></li>
+            </ul>
+            <button class="btn btn-ghost open-booking-btn" type="button" data-plan="Foundation">Start with Foundation</button>
+          </div>
+
+          <!-- Growth Plan (Featured) -->
+          <div class="plan featured">
+            <span class="plan-tag">Most popular</span>
+            <h3>Growth</h3>
+            <p class="plan-sub">For established businesses ready to book more jobs and dominate locally.</p>
+            <div class="price">$497<span class="period">/mo</span></div>
+            <div class="price-note">+ one-time $997 setup</div>
+            <ul class="checklist" role="list">
+              <li><span class="check">✓</span><span><strong>Unlimited</strong> small edits (under 24h turnaround)</span></li>
+              <li><span class="check">✓</span><span>Monthly seasonal offers + promotional banners</span></li>
+              <li><span class="check">✓</span><span>Local SEO schema + Google Business Profile sync</span></li>
+              <li><span class="check">✓</span><span>Quarterly conversion optimization review</span></li>
+              <li><span class="check">✓</span><span>Monthly plain-English ROI report &amp; call tracking</span></li>
+              <li><span class="check">✓</span><span>Direct phone &amp; WhatsApp support line</span></li>
+            </ul>
+            <button class="btn btn-gold open-booking-btn" type="button" data-plan="Growth">Start with Growth &rarr;</button>
+          </div>
+
+          <!-- Scale Plan -->
+          <div class="plan">
+            <span class="plan-tag">Premium</span>
+            <h3>Scale</h3>
+            <p class="plan-sub">For multi-truck fleets, multi-location brands, or ad-heavy operators.</p>
+            <div class="price">$997<span class="period">/mo</span></div>
+            <div class="price-note">+ custom setup</div>
+            <ul class="checklist" role="list">
+              <li><span class="check">✓</span><span>Everything in Growth</span></li>
+              <li><span class="check">✓</span><span>Custom dedicated landing pages for PPC / Google Ads</span></li>
+              <li><span class="check">✓</span><span>Multi-location SEO hierarchy &amp; geo-targeting</span></li>
+              <li><span class="check">✓</span><span>Priority same-day edit turnaround</span></li>
+              <li><span class="check">✓</span><span>Monthly 1-on-1 growth strategy call</span></li>
+              <li><span class="check">✓</span><span>CRM &amp; ServiceTitan / Jobber webhook integration</span></li>
+            </ul>
+            <button class="btn btn-ghost open-booking-btn" type="button" data-plan="Scale">Talk to us</button>
+          </div>
+        </div>
+
+        <!-- Guarantee Banner -->
+        <div class="guarantee">
+          <div class="guarantee-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h4>30-day first-month money back guarantee</h4>
+            <p>If your first month doesn't feel like an immediate relief and an obvious upgrade for your business, we refund 100% of your plan fee — no hoops, no awkward cancellation obstacles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="faq-sec">
+      <div class="container">
+        <div class="section-head text-center-sm">
+          <div>
+            <div class="kicker">FAQ</div>
+            <h2>Honest answers, <em>no fluff</em>.</h2>
+          </div>
+          <p>
+            If something isn't answered here, just ask us directly on the fit call — we'd much rather tell you "we aren't the right fit" than sell you something that won't help your business.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <details open>
+            <summary>Do I own my website and domain?</summary>
+            <p>Yes, 100%. The site lives on your custom domain and all written copy, photography, and brand assets are entirely yours. If you ever decide to leave, we export your website cleanly with zero ransom tactics.</p>
+          </details>
+
+          <details>
+            <summary>How long is the contract commitment?</summary>
+            <p>It is strictly month-to-month after the initial launch month. Our ongoing responsibility is to continually earn your business through measurable results and great support, not to lock you into a rigid 12-month contract.</p>
+          </details>
+
+          <details>
+            <summary>How fast do changes and edits ship?</summary>
+            <p>Most small edits (updating prices, seasonal promos, adding a new technician photo, updating hours) are completed and live within 24 hours on Growth. On our Scale tier, priority requests typically ship the same day.</p>
+          </details>
+
+          <details>
+            <summary>Can you work with our existing website or domain?</summary>
+            <p>In most cases, yes. During our 15-minute fit call, we'll review your current setup together and give you a straight answer on whether it's best to restructure your current site or launch fresh with a clean foundation.</p>
+          </details>
+
+          <details>
+            <summary>What if I don't have professional photos or customer reviews yet?</summary>
+            <p>Don't worry. We provide proven templates and simple automated review capture flows that help you gather authentic 5-star Google reviews and technician job-site photos during your first 30 days.</p>
+          </details>
+
+          <details>
+            <summary>Is Aureon only designed for HVAC businesses?</summary>
+            <p>HVAC is where we started, but our proven local service framework works seamlessly for plumbing, electrical, roofing, landscaping, commercial cleaning, garage doors, pest control, and restoration services.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FIT CALL FORM SECTION -->
+    <section id="contact" class="cta-sec">
+      <div class="container cta-grid">
+        <div class="cta-left">
+          <div class="kicker gold-kicker">Book your free fit call</div>
+          <h2>Ready for a website that <em>pulls its weight</em>?</h2>
+          <p>
+            15 minutes. No pitch deck. We will inspect your current site live, pinpoint exactly what is costing you valuable phone calls, and give you clear action items — whether you hire us or not.
+          </p>
+          <ul class="cta-points" role="list">
+            <li><span class="check">✓</span><span>Free live website conversion audit on the call</span></li>
+            <li><span class="check">✓</span><span>Clear answer on whether Aureon is a mutual fit</span></li>
+            <li><span class="check">✓</span><span>Zero contracts, zero high-pressure sales pitches</span></li>
+          </ul>
+          <div class="cta-direct-contact">
+            <span>Direct questions?</span>
+            <a href="mailto:hello@aureon.com">hello@aureon.com</a>
+            <span class="sep">·</span>
+            <a href="tel:+15055550199">(505) 555-0199</a>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Tell us about your business</h3>
+          <p class="sub">We will reply within one business day with a confirmed call time.</p>
+          
+          <form class="form" id="lead-form">
+            <div class="form-row">
+              <label class="field">
+                <span class="field-label">Your name</span>
+                <input type="text" name="name" placeholder="e.g. Mike Vance" required />
+              </label>
+              <label class="field">
+                <span class="field-label">Business name</span>
+                <input type="text" name="business" placeholder="e.g. Vance Heating & Air" required />
+              </label>
+            </div>
+
+            <div class="form-row">
+              <label class="field">
+                <span class="field-label">Email address</span>
+                <input type="email" name="email" placeholder="mike@vancehvac.com" required />
+              </label>
+              <label class="field">
+                <span class="field-label">Phone number</span>
+                <input type="tel" name="phone" placeholder="(505) 555-0199" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span class="field-label">Industry</span>
+              <select name="industry" required>
+                <option value="">What kind of service business?</option>
+                <option value="HVAC">HVAC &amp; Air Conditioning</option>
+                <option value="Plumbing">Plumbing</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Roofing">Roofing &amp; Gutters</option>
+                <option value="Landscaping">Landscaping &amp; Tree Service</option>
+                <option value="Cleaning">Commercial / Residential Cleaning</option>
+                <option value="Pest Control">Pest Control</option>
+                <option value="Garage Doors">Garage Doors</option>
+                <option value="Other">Other Local Trade</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field-label">Current website (if you have one)</span>
+              <input type="text" name="website" placeholder="www.yourcurrentsite.com" />
+            </label>
+
+            <button type="submit" class="btn btn-dark btn-submit">
+              <span>Book my free fit call &rarr;</span>
+            </button>
+            <small class="privacy-note">🔒 We respect your inbox. No spam, no list reselling, no aggressive marketing blasts.</small>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a class="brand brand-light" href="#" aria-label="Aureon Home">
+            <svg viewBox="0 0 48 48" width="32" height="32" fill="none" aria-hidden="true">
+              <path d="M8 34L24 8l16 26" stroke="#f1c87a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 34h16" stroke="#f1c87a" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="24" cy="34" r="3.4" fill="#f1c87a"/>
+            </svg>
+            <span>Aureon</span>
+          </a>
+          <p class="footer-about">
+            Done-for-you websites for local service businesses. Built with pride in Albuquerque, NM.
+          </p>
+          <div class="footer-status">
+            <span class="status-indicator"></span>
+            <span>All systems operational · Sites online</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="#services">Website management</a>
+          <a href="#services">Conversion tuning</a>
+          <a href="#services">Local SEO</a>
+          <a href="#services">Hosting + security</a>
+          <a href="#process">7-Day Launch</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#proof">Client Results</a>
+          <a href="#industries">Industries We Serve</a>
+          <a href="#calculator">ROI Calculator</a>
+          <a href="#pricing">Pricing Plans</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <button class="footer-link-btn open-booking-btn" type="button">Book a fit call</button>
+          <a href="mailto:hello@aureon.com">hello@aureon.com</a>
+          <a href="tel:+15055550199">(505) 555-0199</a>
+          <span class="office-location">Albuquerque, NM 87102</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aureon Sites. All rights reserved.</span>
+        <span>Privacy Policy · Terms of Service · Built for local service owners who have better things to do.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY FLOATING ACTION BAR -->
+  <aside class="sticky-mobile" aria-label="Mobile quick actions">
+    <a class="btn btn-ghost" href="#pricing">Pricing</a>
+    <button class="btn btn-primary open-booking-btn" type="button">Book free call &rarr;</button>
+  </aside>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal-backdrop" id="booking-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <div class="modal-header">
+        <span class="kicker gold-kicker">Free 15-Minute Fit Call</span>
+        <h3 id="modal-title">Let's look at your website together</h3>
+        <p>No pressure, no pitch decks. Pick a time or submit your details below and we'll confirm within hours.</p>
+      </div>
+
+      <form class="form" id="modal-booking-form">
+        <input type="hidden" name="selected_plan" id="selected-plan-input" value="General" />
+        <div class="form-row">
+          <label class="field">
+            <span class="field-label">Name</span>
+            <input type="text" name="name" placeholder="John Smith" required />
+          </label>
+          <label class="field">
+            <span class="field-label">Phone</span>
+            <input type="tel" name="phone" placeholder="(505) 555-0199" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="field">
+            <span class="field-label">Email</span>
+            <input type="email" name="email" placeholder="john@example.com" required />
+          </label>
+          <label class="field">
+            <span class="field-label">Trade</span>
+            <select name="trade" required>
+              <option value="HVAC">HVAC</option>
+              <option value="Plumbing">Plumbing</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Roofing">Roofing</option>
+              <option value="Landscaping">Landscaping</option>
+              <option value="Other">Other Service</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">
+          <span class="field-label">Preferred Call Time</span>
+          <select name="preferred_time">
+            <option value="morning">Morning (9am - 12pm MT)</option>
+            <option value="afternoon">Afternoon (12pm - 4pm MT)</option>
+            <option value="asap">Earliest available slot today/tomorrow</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary w-full">Confirm Free Call Request &rarr;</button>
+      </form>
+
+      <div class="modal-success" id="modal-success-state" style="display:none;">
+        <div class="success-icon">✓</div>
+        <h4>You're all set!</h4>
+        <p>We received your request. We'll reach out via text/email shortly to confirm your calendar invite.</p>
+        <button class="btn btn-ghost" id="modal-done-btn" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUREON AI CHATBOT WIDGET -->
+  <div class="chatbot-wrapper" id="chatbot-wrapper">
+    <!-- Chat Trigger Button -->
+    <button class="chat-launcher" id="chat-launcher" aria-label="Open Aureon AI Assistant" aria-expanded="false">
+      <div class="launcher-avatar">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="chat-online-dot"></span>
+      </div>
+      <span class="launcher-text">Chat with Cognos</span>
+    </button>
+
+    <!-- Chat Window Container -->
+    <div class="chat-window" id="chat-window" aria-hidden="true">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-header-avatar">
+            <svg viewBox="0 0 48 48" width="20" height="20" fill="none" aria-hidden="true">
+              <path d="M8 34L24 8l16 26" stroke="#f1c87a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 34h16" stroke="#f1c87a" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="24" cy="34" r="3.4" fill="#f1c87a"/>
+            </svg>
+            <span class="chat-status-pulse"></span>
+          </div>
+          <div>
+            <h4 class="chat-title">Cognos — Aureon AI</h4>
+            <span class="chat-subtitle">⚡ Powered by Gemini 3.8 Flash</span>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button class="chat-tool-btn" id="chat-reset-btn" title="Reset Conversation" aria-label="Reset Conversation">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/>
+            </svg>
+          </button>
+          <button class="chat-tool-btn" id="chat-close-btn" title="Close Chat" aria-label="Close Chat">
+            &times;
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Starter Chips -->
+      <div class="chat-chips" id="chat-chips">
+        <button class="chat-chip" data-prompt="How much does a website cost?">💰 Pricing &amp; plans?</button>
+        <button class="chat-chip" data-prompt="How fast can you launch my site?">⚡ 7-day launch?</button>
+        <button class="chat-chip" data-prompt="Do I own my website and domain?">🔑 Do I own my site?</button>
+        <button class="chat-chip" data-prompt="What trades do you work with?">🛠️ Supported trades?</button>
+        <button class="chat-chip" data-prompt="How do I book a free 15-minute fit call?">📅 Book a fit call</button>
+      </div>
+
+      <!-- Messages Body -->
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-msg bot">
+          <div class="msg-bubble">
+            <p>Hello and welcome to <strong>Aureon Sites</strong>! How may I be of service to your business today?</p>
+          </div>
+          <span class="msg-time">Just now</span>
+        </div>
+      </div>
+
+      <!-- Typing Indicator -->
+      <div class="chat-typing" id="chat-typing" style="display:none;">
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <small>Aureon AI is thinking...</small>
+      </div>
+
+      <!-- Input Area -->
+      <form class="chat-input-area" id="chat-form">
+        <input type="text" id="chat-input" placeholder="Ask about pricing, updates, local SEO..." autocomplete="off" required />
+        <button type="submit" class="chat-send-btn" id="chat-send-btn" aria-label="Send message">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+      <div class="chat-disclaimer">
+        <span>Trained on Aureon Sites knowledge · Month-to-month service</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
