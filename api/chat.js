@@ -104,7 +104,7 @@ module.exports = async function handler(req, res) {
         error: 'Missing GEMINI_API_KEY environment variable. Please configure it in your Vercel Project Settings (Settings -> Environment Variables).'
       });
     }
-    const model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
+    const model = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
 
     // Format history
     const contents = [];
@@ -134,30 +134,57 @@ module.exports = async function handler(req, res) {
       }
     };
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+    const modelsToTry = [
+      process.env.GEMINI_MODEL,
+      'gemini-3.5-flash',
+      'gemini-3.1-flash-lite',
+      'gemini-flash-latest'
+    ].filter(Boolean);
+    const uniqueModels = [...new Set(modelsToTry)];
 
-    const geminiRes = await fetch(geminiUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
+    let replyText = '';
+    let lastError = null;
 
-    if (!geminiRes.ok) {
-      const errText = await geminiRes.text();
-      console.error('Gemini API Error:', geminiRes.status, errText);
-      return res.status(500).json({
-        error: 'Failed to communicate with AI',
-        details: errText
-      });
+    for (const m of uniqueModels) {
+      try {
+        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${apiKey}`;
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+        const geminiRes = await fetch(geminiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+
+        if (!geminiRes.ok) {
+          const errText = await geminiRes.text();
+          console.warn(`Model ${m} returned HTTP ${geminiRes.status}: ${errText.slice(0, 150)}`);
+          lastError = errText;
+          continue;
+        }
+
+        const data = await geminiRes.json();
+        const candidates = data.candidates || [];
+        if (candidates.length > 0 && candidates[0].content && candidates[0].content.parts) {
+          replyText = candidates[0].content.parts.map(p => p.text).join('\n');
+          break;
+        }
+      } catch (err) {
+        console.warn(`Error connecting to model ${m}:`, err.message);
+        lastError = err.message;
+      }
     }
 
-    const data = await geminiRes.json();
-    const candidates = data.candidates || [];
-    let replyText = '';
-
-    if (candidates.length > 0 && candidates[0].content && candidates[0].content.parts) {
-      replyText = candidates[0].content.parts.map(p => p.text).join('\n');
-    } else {
+    if (!replyText) {
+      if (lastError) {
+        return res.status(500).json({
+          error: 'Failed to communicate with AI',
+          details: lastError
+        });
+      }
       replyText = "I'm here to help, but I couldn't generate a response. Please feel free to book a call with our team at https://cal.com/wesley-webbert-w6lbm1/60-min.";
     }
 

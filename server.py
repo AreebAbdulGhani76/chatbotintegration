@@ -22,7 +22,7 @@ load_env()
 
 PORT = int(os.environ.get("PORT", 8080))
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
 
 # Load company knowledge base
 KNOWLEDGE_FILE = os.path.join(BASE_DIR, "company_knowledge_base.md")
@@ -105,8 +105,7 @@ class AureonRequestHandler(http.server.SimpleHTTPRequestHandler):
                 "parts": [{"text": user_message}]
             })
 
-            # Prepare Gemini 3.8 Flash request payload
-            gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={API_KEY}"
+            # Prepare Gemini request payload
             payload = {
                 "systemInstruction": {
                     "parts": [{"text": SYSTEM_INSTRUCTION}]
@@ -119,19 +118,44 @@ class AureonRequestHandler(http.server.SimpleHTTPRequestHandler):
                 }
             }
 
-            req = urllib.request.Request(
-                gemini_url,
-                data=json.dumps(payload).encode("utf-8"),
-                headers={"Content-Type": "application/json"}
-            )
+            models_to_try = [
+                MODEL,
+                "gemini-3.5-flash",
+                "gemini-3.1-flash-lite",
+                "gemini-flash-latest"
+            ]
+            # Deduplicate preserving order
+            unique_models = list(dict.fromkeys([m for m in models_to_try if m]))
 
-            with urllib.request.urlopen(req, timeout=30) as response:
-                res_data = json.loads(response.read().decode("utf-8"))
-                candidates = res_data.get("candidates", [])
-                if candidates:
-                    reply_text = candidates[0]["content"]["parts"][0]["text"]
-                else:
-                    reply_text = "I'm here to help, but I couldn't generate a response. Please feel free to book a call with our team at https://cal.com/wesley-webbert-w6lbm1/60-min."
+            reply_text = ""
+            last_error = None
+
+            for m in unique_models:
+                try:
+                    gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={API_KEY}"
+                    req = urllib.request.Request(
+                        gemini_url,
+                        data=json.dumps(payload).encode("utf-8"),
+                        headers={"Content-Type": "application/json"}
+                    )
+                    with urllib.request.urlopen(req, timeout=15) as response:
+                        res_data = json.loads(response.read().decode("utf-8"))
+                        candidates = res_data.get("candidates", [])
+                        if candidates and candidates[0].get("content", {}).get("parts"):
+                            reply_text = candidates[0]["content"]["parts"][0]["text"]
+                            break
+                except urllib.error.HTTPError as e:
+                    err_msg = e.read().decode("utf-8")
+                    print(f"Model {m} HTTP Error {e.code}: {err_msg[:120]}")
+                    last_error = err_msg
+                except Exception as e:
+                    print(f"Model {m} Error: {str(e)}")
+                    last_error = str(e)
+
+            if not reply_text:
+                if last_error:
+                    raise Exception(f"AI Service unavailable: {last_error}")
+                reply_text = "I'm here to help, but I couldn't generate a response. Please feel free to book a call with our team at https://cal.com/wesley-webbert-w6lbm1/60-min."
 
             # Send back JSON response
             self.send_response(200)

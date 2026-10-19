@@ -2,7 +2,7 @@
 
 An intelligent, context-aware AI chatbot assistant (**Cognos**) built for **Aureon Sites**, providing home service contractors (HVAC, Plumbing, Electrical, Roofing, etc.) with real-time answers about website packages, pricing, timelines, and services.
 
-Powered by Google's **Gemini 3.8 Flash** with a rich grounded knowledge base.
+Powered by Google's **Gemini AI (with multi-model automatic fallback)** and a rich grounded knowledge base.
 
 🌐 **Live Demo:** [https://chatbotintegration.vercel.app/](https://chatbotintegration.vercel.app/)
 
@@ -10,7 +10,7 @@ Powered by Google's **Gemini 3.8 Flash** with a rich grounded knowledge base.
 
 ## 🚀 Features
 
-- **Gemini 3.8 Flash Engine**: Fast, polite, and accurate customer support assistant.
+- **Gemini Flash Engine**: Fast, polite, and accurate customer support assistant with auto-failover against high demand spikes.
 - **Contractor Knowledge Base**: Pre-loaded with comprehensive service details, plans (Foundation, Growth, Scale), FAQs, and consultation booking links.
 - **Responsive Floating Chat Widget**: Interactive chat with typing indicators, quick chip prompts, Markdown formatting, and modern UI animations.
 - **Dual Deployment Ready**:
@@ -37,7 +37,7 @@ Edit `.env` and add your Gemini API key:
 ```ini
 GEMINI_API_KEY=your_gemini_api_key_here
 PORT=8080
-GEMINI_MODEL=gemini-3.8-flash
+GEMINI_MODEL=gemini-3.5-flash
 ```
 
 ### 3. Run Locally
